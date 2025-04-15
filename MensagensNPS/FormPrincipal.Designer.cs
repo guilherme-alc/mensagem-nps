@@ -1,6 +1,6 @@
 ﻿namespace MensagensNPS
 {
-    partial class Principal
+    partial class FormPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             comboBox1 = new ComboBox();
             lblTemplate = new Label();
             menuSuperior = new MenuStrip();
@@ -103,6 +103,7 @@
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             sairToolStripMenuItem.Size = new Size(38, 20);
             sairToolStripMenuItem.Text = "Sair";
+            sairToolStripMenuItem.Click += SairAplicação;
             // 
             // btnCadastrarTemplate
             // 
@@ -114,6 +115,7 @@
             btnCadastrarTemplate.TabIndex = 3;
             btnCadastrarTemplate.Text = "Cadastrar Template";
             btnCadastrarTemplate.UseVisualStyleBackColor = false;
+            btnCadastrarTemplate.Click += CadastrarTemplate;
             // 
             // label1
             // 
@@ -342,6 +344,7 @@
             Controls.Add(groupBox1);
             Controls.Add(menuSuperior);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            IsMdiContainer = true;
             MainMenuStrip = menuSuperior;
             MinimumSize = new Size(816, 489);
             Name = "Principal";
