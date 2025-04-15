@@ -56,6 +56,7 @@
             btnProximaMensagem = new Button();
             btnAnterior = new Button();
             groupBox3 = new GroupBox();
+            btnCopiarTemplate = new Button();
             menuSuperior.SuspendLayout();
             groupBox1.SuspendLayout();
             statusRodape.SuspendLayout();
@@ -160,6 +161,7 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(btnCopiarTemplate);
             groupBox1.Controls.Add(btnCadastrarTemplate);
             groupBox1.Controls.Add(comboBox1);
             groupBox1.Controls.Add(lblTemplate);
@@ -333,7 +335,16 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Mensagem";
             // 
-            // Principal
+            // btnCopiarTemplate
+            // 
+            btnCopiarTemplate.Location = new Point(304, 89);
+            btnCopiarTemplate.Name = "btnCopiarTemplate";
+            btnCopiarTemplate.Size = new Size(98, 41);
+            btnCopiarTemplate.TabIndex = 8;
+            btnCopiarTemplate.Text = "Copiar";
+            btnCopiarTemplate.UseVisualStyleBackColor = true;
+            // 
+            // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -347,8 +358,9 @@
             IsMdiContainer = true;
             MainMenuStrip = menuSuperior;
             MinimumSize = new Size(816, 489);
-            Name = "Principal";
+            Name = "FormPrincipal";
             Text = " Gerador de mensagem";
+            Load += CarregarFormPrincipal;
             menuSuperior.ResumeLayout(false);
             menuSuperior.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -394,5 +406,6 @@
         private Button btnGerarMensagem;
         private Button btnAnterior;
         private GroupBox groupBox3;
+        private Button btnCopiarTemplate;
     }
 }

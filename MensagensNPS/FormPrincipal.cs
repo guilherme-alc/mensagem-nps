@@ -1,3 +1,6 @@
+using System.Runtime.Versioning;
+using MensagensNPS.Models;
+
 namespace MensagensNPS
 {
     public partial class FormPrincipal : Form
@@ -7,7 +10,22 @@ namespace MensagensNPS
             InitializeComponent();
         }
 
-        public string TemplateCadastrado { get; set; }
+        public List<Template> TemplatesCadastrados { get; set; }
+
+        private void CarregarFormPrincipal(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is MdiClient)
+                {
+                    control.BackColor = Color.WhiteSmoke;
+                    break;
+                }
+            }
+            //Image iconCopiar = Properties.Resources.;
+            //Image iconCopiarRedimensionado = new Bitmap(iconCopiar, new Size(20, 20));
+            //btnCopiarTemplate.Image = iconCopiarRedimensionado;
+        }
 
         private void CadastrarTemplate(object sender, EventArgs e)
         {
@@ -21,7 +39,7 @@ namespace MensagensNPS
                 var resultado = modalCadastro.ShowDialog(this);
                 if (resultado == DialogResult.OK)
                 {
-                    TemplateCadastrado = modalCadastro.Template;
+                    TemplatesCadastrados.Add(modalCadastro.NovoTemplate);
                 }
             }
         }
